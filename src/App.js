@@ -1,11 +1,11 @@
 import './App.css';
-import ExpenseItem from './components/ExpenseItems';
+import ExpenseItems from './components/ExpenseItems';
 
 function App() {
   return (
     <div className='App'>
       <body>
-        <ExpenseItem></ExpenseItem>
+        <ExpenseItems></ExpenseItems>
       </body>
     </div>
   );
