@@ -5,7 +5,7 @@ function ExpenseItems(){
             <ul>
                 <li>Food 10</li>
                 <li>Petrol 100</li>
-                <li>Movie 200</li>
+                <li>Movie 20</li>
             </ul>
         </div>
     ) 
