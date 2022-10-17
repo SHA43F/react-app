@@ -2,11 +2,19 @@ import './App.css';
 import ExpenseItems from './components/ExpenseItems';
 
 function App() {
+    const data = [
+    {
+      title: 'abc',
+      date: new Date(2022, 5, 15),
+      amount: 500,
+      location: 'IMAX'
+    }
+  ]
   return (
     <div>
       <h2>Expense Items!</h2>
       <body>
-        <ExpenseItems></ExpenseItems>
+        <ExpenseItems date={data[0].date} title={data[0].title} amount={data[0].amount} location={data[0].location}></ExpenseItems>
       </body>
     </div>
   );
