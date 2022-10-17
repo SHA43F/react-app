@@ -1,7 +1,8 @@
 import './App.css';
-import ExpenseItems from './components/ExpenseItems';
+import ExpenseItems from './components/Expenses/ExpenseItems';
+import Card from './components/UI/Card'
 
-function App() {
+const App = () => {
   const data = [
     {
       title: 'abc',
@@ -29,12 +30,12 @@ function App() {
     content.push(<ExpenseItems title={item.title} date={item.date} amount={item.amount} location={item.location}></ExpenseItems>)
   }
   return (
-    <div>
+    <Card>
       <h2>Expense Items!</h2>
       <body>
         {content}
       </body>
-    </div>
+    </Card>
   );
 }
 
