@@ -1,6 +1,5 @@
 import './App.css';
-import ExpenseItems from './components/Expenses/ExpenseItems';
-import Card from './components/UI/Card'
+import Expenses from './components/Expenses/Expenses'
 
 const App = () => {
   const data = [
@@ -23,19 +22,11 @@ const App = () => {
       location: 'SVCS'
     }
   ]
-  let content = []
-  for(let i=0;i<data.length;i++)
-  {
-    let item = data[i]
-    content.push(<ExpenseItems title={item.title} date={item.date} amount={item.amount} location={item.location}></ExpenseItems>)
-  }
   return (
-    <Card>
+    <div>
       <h2>Expense Items!</h2>
-      <body>
-        {content}
-      </body>
-    </Card>
+      <Expenses data={data} />
+    </div>
   );
 }
 
