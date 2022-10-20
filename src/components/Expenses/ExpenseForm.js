@@ -1,19 +1,24 @@
+import React, {useState} from "react";
 import Card from "../UI/Card";
 import "./Expenses.css";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
+    const expTitleChange = (event) => console.log(event.target.value);
+    const expAmountChange = (event) => console.log(event.target.value);
+    const expDateChange = (event) => console.log(event.target.value);
+
   return (
-    <Card className="expenses">
-      <h2 className="expense-item">Expense Title</h2>
-      <input type="text" title="expTitle" />
-      <h2 className="expense-item"> Expense Amount</h2>
-      <input type="number" title="expAmount" />
-      <h2 className="expense-item">Date</h2>
-      <input type="date" title="expDate" />
+    <form className="expenses">
+      <label className="expense-item">Expense Title</label>
+      <input type="text" onChange={expTitleChange} />
+      <label className="expense-item"> Expense Amount</label>
+      <input type="number" onChange={expAmountChange}/>
+      <label className="expense-item">Date</label>
+      <input type="date" onChange={expDateChange}/>
       <br></br>
       <button>Add Expense</button>
-    </Card>
+    </form>
   );
 };
 
