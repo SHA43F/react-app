@@ -2,50 +2,33 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  // const [updateTitle, enteredTitle] = useState("");
-  // const [updateAmount, enteredAmount] = useState("");
-  // const [updateDate, enteredDate] = useState("");
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
+  const [updateTitle, enteredTitle] = useState("");
+  const [updateAmount, enteredAmount] = useState("");
+  const [updateDate, enteredDate] = useState("");
 
   const expTitleChange = (event) => {
-    // enteredTitle(event.target.value);
-    // console.log(updateTitle);
-    setUserInput((prevInput) => {
-      return {
-        ...prevInput,
-        enteredTitle: event.target.value,
-      };
-    });
+    enteredTitle(event.target.value);
   };
 
   const expAmountChange = (event) => {
-    // enteredAmount(event.target.value);
-    // console.log(updateAmount);
-    setUserInput((prevInput) => {
-      return {
-        ...prevInput,
-        enteredAmount: event.target.value,
-      };
-    });
+    enteredAmount(event.target.value);
   };
 
   const expDateChange = (event) => {
-    // enteredDate(event.target.value);
-    // console.log(updateDate);
-    setUserInput((prevInput) => {
-      return {
-        ...prevInput,
-        enteredDate: event.target.value,
-      };
-    });
+    enteredDate(event.target.value);
   };
 
+  const submitFormExpense = (e) => {
+    e.preventDefault();
+    const submitExpenseData = {
+      title: updateTitle,
+      amount: updateAmount,
+      date: updateDate,
+    };
+    console.log(submitExpenseData);
+  };
   return (
-    <form>
+    <form onSubmit={submitFormExpense}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Expense Title</label>
@@ -61,7 +44,7 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button>Add Expense</button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
