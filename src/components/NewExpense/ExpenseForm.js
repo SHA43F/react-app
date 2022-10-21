@@ -2,22 +2,46 @@ import React, { useState } from "react";
 import "./ExpenseForm.css";
 
 const ExpenseForm = () => {
-  const [updateTitle, enteredTitle] = useState("");
+  // const [updateTitle, enteredTitle] = useState("");
+  // const [updateAmount, enteredAmount] = useState("");
+  // const [updateDate, enteredDate] = useState("");
+  const [userInput, setUserInput] = useState({
+    enteredTitle: "",
+    enteredAmount: "",
+    enteredDate: "",
+  });
+
   const expTitleChange = (event) => {
-    enteredTitle(event.target.value);
-    console.log(updateTitle);
+    // enteredTitle(event.target.value);
+    // console.log(updateTitle);
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        enteredTitle: event.target.value,
+      };
+    });
   };
 
-  const [updateAmount, enteredAmount] = useState("");
   const expAmountChange = (event) => {
-    enteredAmount(event.target.value);
-    console.log(updateAmount);
+    // enteredAmount(event.target.value);
+    // console.log(updateAmount);
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        enteredAmount: event.target.value,
+      };
+    });
   };
 
-  const [updateDate, enteredDate] = useState("");
   const expDateChange = (event) => {
-    enteredDate(event.target.value);
-    console.log(updateDate);
+    // enteredDate(event.target.value);
+    // console.log(updateDate);
+    setUserInput((prevInput) => {
+      return {
+        ...prevInput,
+        enteredDate: event.target.value,
+      };
+    });
   };
 
   return (
