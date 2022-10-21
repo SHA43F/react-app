@@ -1,11 +1,9 @@
 import "./App.css";
 import NewExpense from "./components/NewExpense/NewExpense";
 import Expenses from "./components/Expenses/Expenses";
-import { useState } from "react";
-// import { useState } from "react";
 
 const App = () => {
-  const [expenses,setData] = useState([
+  const expenses = [
     {
       id: "a1",
       title: "abc",
@@ -26,11 +24,11 @@ const App = () => {
       date: new Date(2022, 5, 15),
       amount: 300,
       location: "SVCS",
-    }]
-  );
-  const addNewExpenseData = (data) =>{
-    setData([data])
-  };
+    }];
+
+    const addNewExpenseData = (data) =>{
+      console.log(data)
+    }
 
   return (
     <div>
