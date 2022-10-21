@@ -1,46 +1,49 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-const ExpenseForm = () => {
-  const [updateTitle, enteredTitle] = useState("");
-  const [updateAmount, enteredAmount] = useState("");
-  const [updateDate, enteredDate] = useState("");
+const ExpenseForm = (props) => {
+  const [enteredTitle, setEnteredTitle] = useState("");
+  const [enteredAmount, setEnteredAmount] = useState("");
+  const [enteredDate, setEnteredDate] = useState("");
 
   const expTitleChange = (event) => {
-    enteredTitle(event.target.value);
+    setEnteredTitle(event.target.value);
   };
 
   const expAmountChange = (event) => {
-    enteredAmount(event.target.value);
+    setEnteredAmount(event.target.value);
   };
 
   const expDateChange = (event) => {
-    enteredDate(event.target.value);
+    setEnteredDate(event.target.value);
   };
 
   const submitFormExpense = (e) => {
     e.preventDefault();
     const submitExpenseData = {
-      title: updateTitle,
-      amount: updateAmount,
-      date: updateDate,
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate)
     };
-    console.log(submitExpenseData);
+    props.addNewExpense(submitExpenseData);
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
   return (
     <form onSubmit={submitFormExpense}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Expense Title</label>
-          <input type="text" onChange={expTitleChange} />
+          <input type="text" value={enteredTitle} onChange={expTitleChange} />
         </div>
         <div className="new-expense__control">
           <label> Expense Amount</label>
-          <input type="number" onChange={expAmountChange} />
+          <input type="number" value={enteredAmount} onChange={expAmountChange} />
         </div>
         <div className="new-expense__control">
           <label>Date</label>
-          <input type="date" onChange={expDateChange} />
+          <input type="date" value={enteredDate} onChange={expDateChange} />
         </div>
       </div>
       <div className="new-expense__actions">

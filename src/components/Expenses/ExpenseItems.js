@@ -6,7 +6,7 @@ import ExpenseDetails from './ExpenseDetails';
 import Card from '../UI/Card'
 
 const ExpenseItems = (props) => {
-    let [amount, setAmount] = useState(props.amount)
+    const [amount, setAmount] = useState(props.amount)
     const clickHandler = () =>{
         setAmount(100);
         console.log(amount);
