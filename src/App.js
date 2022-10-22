@@ -25,6 +25,13 @@ const dummyExpenses = [
     amount: 300,
     location: "SVCS",
   },
+  {
+    id: "a4",
+    title: "pqr",
+    date: new Date(2021, 8, 20),
+    amount: 900,
+    location: "PICS",
+  }
 ];
 
 const App = () => {
